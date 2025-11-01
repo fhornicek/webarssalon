@@ -8,7 +8,6 @@ import logo from '../assets/logo.png';
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       
-      <!-- Logo -->
       <div class="flex">
         <a href="/webarssalon/">
                       <Image 
@@ -22,7 +21,6 @@ import logo from '../assets/logo.png';
         </a>
       </div>
 
-      <!-- Desktop Navigation -->
       <div class="hidden md:flex absolute left-1/2 transform -translate-x-1/2">
         <div class="flex items-baseline space-x-8 font-source-serif font-light text-md tracking-wide uppercase">
           <a href="/webarssalon/o-mne" class="text-white hover:text-neutral-500 transition-colors duration-300">
@@ -43,7 +41,6 @@ import logo from '../assets/logo.png';
         </div>
       </div>
 
-      <!-- CTA Button -->
       <div class="hidden md:block">
         <PrimaryBtn 
           text="REZERVOVAT TERMÍN" 
@@ -52,7 +49,6 @@ import logo from '../assets/logo.png';
         />
       </div>
 
-      <!-- Mobile menu button -->
       <div class="md:hidden">
         <button 
           type="button" 
@@ -63,7 +59,6 @@ import logo from '../assets/logo.png';
           id="mobile-menu-button"
         >
           <span class="sr-only">Otevřít hlavní menu</span>
-          <!-- Hamburger icon with animation -->
           <div class="w-8 h-8 flex flex-col justify-center items-center">
             <span class="hamburger-line w-7 h-0.5 bg-current transition-all duration-300 ease-in-out"></span>
             <span class="hamburger-line w-7 h-0.5 bg-current transition-all duration-300 ease-in-out mt-1.5"></span>
@@ -74,7 +69,6 @@ import logo from '../assets/logo.png';
     </div>
   </div>
 
-  <!-- Mobile menu -->
   <div class="md:hidden hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-sm">
       <a href="/webarssalon/o-mne" class="text-white hover:text-beige block px-3 py-2 text-base font-medium tracking-wide uppercase transition-colors duration-300">
@@ -132,12 +126,10 @@ import logo from '../assets/logo.png';
       const isHidden = menu.classList.contains('hidden');
       
       if (isHidden) {
-        // Otevírání - nejdříve zobrazit, pak animovat
         menu.classList.remove('hidden');
         button.classList.add('menu-open');
         button.setAttribute('aria-expanded', 'true');
       } else {
-        // Zavírání
         menu.classList.add('hidden');
         button.classList.remove('menu-open');
         button.setAttribute('aria-expanded', 'false');

@@ -32,7 +32,6 @@ const {
   imageFetchPriority = 'auto'
 } = Astro.props;
 
-// Velikosti nadpisů
 const titleSizeClasses = {
   sm: 'text-2xl sm:text-3xl lg:text-4xl',
   md: 'text-3xl sm:text-4xl lg:text-5xl',
@@ -45,7 +44,6 @@ const titleSizeClasses = {
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class={`grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center ${reversed ? 'lg:grid-flow-col-dense' : ''}`}>
       
-      <!-- Text Content -->
       <div class={`space-y-8 ${reversed ? 'lg:col-start-2' : ''}`}>
         <h2 class={`${titleSizeClasses[titleSize]} font-regular tracking-wide leading-tight ${textColor} font-source-serif whitespace-pre-line`}>
           {title}
@@ -66,7 +64,6 @@ const titleSizeClasses = {
         )}
       </div>
 
-      <!-- Image -->
       <div class={`${reversed ? 'lg:col-start-1' : ''}`}>
         <div class="relative mx-auto w-3/4">
           <Image 

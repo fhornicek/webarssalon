@@ -9,7 +9,6 @@ import bgSections from '../assets/bgsections.jpg';
 
 <Layout title="Galerie - ARS Salon">
        <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
-            <!-- Pozadí obrázek -->
             <div class="absolute inset-0 -z-10">
                 <Image 
                     src={bgSections}
@@ -19,7 +18,6 @@ import bgSections from '../assets/bgsections.jpg';
                     height={1080}
                     loading="eager"
                 />
-                <!-- Překryv pro lepší čitelnost textu -->
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>
             
@@ -37,7 +35,6 @@ import bgSections from '../assets/bgsections.jpg';
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         
-                        <!-- Placeholder pro galerii obrázků -->
                         <div class="group cursor-pointer">
                             <div class="relative overflow-hidden rounded-lg">
                                 <Image 
@@ -155,5 +152,4 @@ import bgSections from '../assets/bgsections.jpg';
                     </div>
                 </div>
             </section>
-    </div>
 </Layout>
