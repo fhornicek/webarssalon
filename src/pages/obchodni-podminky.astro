@@ -1,1 +1,108 @@
-obchodni podminky
+---
+import Layout from '../layouts/Layout.astro';
+import bgSections from '../assets/bgsections.jpg';
+import { Image } from 'astro:assets';
+---
+
+<Layout title="Obchodní podmínky - ARS Salon">
+    <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
+        <!-- Pozadí obrázek -->
+        <div class="absolute inset-0 -z-10">
+            <Image 
+                src={bgSections}
+                alt="Pozadí sekce"
+                class="w-full h-full object-cover"
+                width={1920}
+                height={1080}
+                loading="eager"
+            />
+            <!-- Překryv pro lepší čitelnost textu -->
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-regular tracking-wide leading-tight text-white font-source-serif mb-8">
+                OBCHODNÍ PODMÍNKY
+            </h1>
+            <p class="text-lg sm:text-xl leading-relaxed text-white font-light">
+                Pravidla a podmínky pro poskytování služeb permanentního make-upu.
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-white py-16 lg:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg max-w-none text-black">
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">1. Základní ustanovení</h2>
+                        <p class="mb-6 font-light">
+                            Tyto obchodní podmínky upravují práva a povinnosti mezi provozovatelem ARS Salon 
+                            a klienty při poskytování služeb permanentního make-upu.
+                        </p>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">2. Rezervace a platby</h2>
+                        <ul class="mb-6 space-y-2 font-light">
+                            <li>• Rezervace je závazná po potvrzení ze strany salonu</li>
+                            <li>• Konzultace je zpoplatněna částkou 500 Kč</li>
+                            <li>• Při objednání služby se konzultace započítává do celkové ceny</li>
+                            <li>• Platba je možná v hotovosti nebo kartou</li>
+                            <li>• Při rezervaci služby je nutné uhradit zálohu 1000 Kč</li>
+                        </ul>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">3. Storno podmínky</h2>
+                        <ul class="mb-6 space-y-2 font-light">
+                            <li>• Storno do 24 hodin před termínem je zdarma</li>
+                            <li>• Storno do 12 hodin před termínem - 50% ceny služby</li>
+                            <li>• Storno méně než 12 hodin nebo nedostavení se - 100% ceny služby</li>
+                            <li>• V případě nemoci je možno dohodnout náhradní termín</li>
+                        </ul>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">4. Zdravotní kontraindikace</h2>
+                        <p class="mb-4 font-light">
+                            Služby permanentního make-upu nejsou vhodné pro osoby s následujícími stavy:
+                        </p>
+                        <ul class="mb-6 space-y-2 font-light">
+                            <li>• Těhotenství a kojení</li>
+                            <li>• Diabetes mellitus</li>
+                            <li>• Poruchy srážlivosti krve</li>
+                            <li>• Akutní kožní onemocnění v oblasti zákroku</li>
+                            <li>• Užívání antibiotik nebo jiných léků ovlivňujících hojení</li>
+                            <li>• Alergie na použité pigmenty</li>
+                        </ul>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">5. Péče po zákroku</h2>
+                        <ul class="mb-6 space-y-2 font-light">
+                            <li>• Klient je povinen dodržovat pokyny k péči po zákroku</li>
+                            <li>• V případě nedodržení pokynů salon neručí za výsledek</li>
+                            <li>• Korekce je možná 4-6 týdnů po zákroku</li>
+                            <li>• Korekce je zpoplatněna dle ceníku</li>
+                        </ul>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">6. Reklamace</h2>
+                        <ul class="mb-6 space-y-2 font-light">
+                            <li>• Reklamace je možno uplatnit do 30 dnů od zákroku</li>
+                            <li>• Reklamace musí být doložena fotografiemi</li>
+                            <li>• Salon si vyhrazuje právo na odborné posouzení reklamace</li>
+                            <li>• V oprávněných případech salon poskytne nápravu zdarma</li>
+                        </ul>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">7. Závěrečná ustanovení</h2>
+                        <p class="mb-6 font-light">
+                            Tyto obchodní podmínky nabývají účinnosti dnem zveřejnění. 
+                            Salon si vyhrazuje právo na jejich změnu. Klient bere na vědomí, 
+                            že výsledky permanentního make-upu jsou individuální a mohou se lišit.
+                        </p>
+
+                        <div class="bg-gray-50 p-6 rounded-lg mt-8">
+                            <h3 class="text-lg font-medium font-source-serif mb-2">Kontakt</h3>
+                            <p class="font-light">
+                                ARS Salon<br>
+                                Obchodní 15086<br>
+                                686 01 Uherské Hradiště 1<br>
+                                Tel: +420 602 516 612<br>
+                                Email: icechmankova@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+</Layout>

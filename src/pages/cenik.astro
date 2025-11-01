@@ -1,1 +1,183 @@
-cenik
+---
+import Layout from '../layouts/Layout.astro';
+import PrimaryBtn from '../components/PrimaryBtn.astro';
+import { Image } from 'astro:assets';
+import bgSections from '../assets/bgsections.jpg';
+---
+
+<Layout title="Ceník - ARS Salon">
+    <!-- Navbar pozadí -->
+        <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
+            <!-- Pozadí obrázek -->
+            <div class="absolute inset-0 -z-10">
+                <Image 
+                    src={bgSections}
+                    alt="Pozadí sekce"
+                    class="w-full h-full object-cover"
+                    width={1920}
+                    height={1080}
+                    loading="eager"
+                />
+                <!-- Překryv pro lepší čitelnost textu -->
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-regular tracking-wide leading-tight text-white font-source-serif mb-8">
+                    CENÍK
+                </h1>
+                <p class="text-lg sm:text-xl leading-relaxed text-white font-light">
+                    Transparentní ceny za kvalitní permanentní make-up. Ceny zahrnují konzultaci a následnou kontrolu.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-beige py-16 lg:py-24">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <!-- Obočí -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl sm:text-3xl font-medium text-black font-source-serif mb-6 text-center">
+                            PERMANENTNÍ MAKE-UP OBOČÍ
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Vláskova metoda</span>
+                                <span class="text-base font-medium text-secondarybtn">4 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Stínování</span>
+                                <span class="text-base font-medium text-secondarybtn">4 000 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">3D metoda (kombinovaná)</span>
+                                <span class="text-base font-medium text-secondarybtn">4 800 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Korekce (do 6 týdnů)</span>
+                                <span class="text-base font-medium text-secondarybtn">1 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-base font-light">Refresh (po roce)</span>
+                                <span class="text-base font-medium text-secondarybtn">3 000 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rty -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl sm:text-3xl font-medium text-black font-source-serif mb-6 text-center">
+                            PERMANENTNÍ MAKE-UP RTŮ
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Kontura rtů</span>
+                                <span class="text-base font-medium text-secondarybtn">3 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Barevná výplň</span>
+                                <span class="text-base font-medium text-secondarybtn">4 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">3D metoda (kontura + stínování)</span>
+                                <span class="text-base font-medium text-secondarybtn">5 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Korekce (do 6 týdnů)</span>
+                                <span class="text-base font-medium text-secondarybtn">1 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-base font-light">Refresh (po roce)</span>
+                                <span class="text-base font-medium text-secondarybtn">3 500 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Linky -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl sm:text-3xl font-medium text-black font-source-serif mb-6 text-center">
+                            PERMANENTNÍ LINKY
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Jemná kontura mezi řasami</span>
+                                <span class="text-base font-medium text-secondarybtn">3 000 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Výrazné linky</span>
+                                <span class="text-base font-medium text-secondarybtn">3 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Bílá linka na sliznici</span>
+                                <span class="text-base font-medium text-secondarybtn">2 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Korekce (do 6 týdnů)</span>
+                                <span class="text-base font-medium text-secondarybtn">1 000 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-base font-light">Refresh (po roce)</span>
+                                <span class="text-base font-medium text-secondarybtn">2 000 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dodatečné služby -->
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h2 class="text-2xl sm:text-3xl font-medium text-black font-source-serif mb-6 text-center">
+                            DODATEČNÉ SLUŽBY
+                        </h2>
+                        
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Konzultace</span>
+                                <span class="text-base font-medium text-secondarybtn">500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-beige pb-2">
+                                <span class="text-base font-light">Odstranění PM</span>
+                                <span class="text-base font-medium text-secondarybtn">2 000 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-center pb-2">
+                                <span class="text-base font-light">Korekce špatně provedeného PM</span>
+                                <span class="text-base font-medium text-secondarybtn">dle složitosti</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative py-16 lg:py-24 overflow-hidden">
+            <!-- Pozadí obrázek -->
+            <div class="absolute inset-0 -z-10">
+                <Image 
+                    src={bgSections}
+                    alt="Pozadí sekce"
+                    class="w-full h-full object-cover"
+                    width={1920}
+                    height={1080}
+                    loading="lazy"
+                />
+                <!-- Překryv pro lepší čitelnost textu -->
+                <div class="absolute inset-0 bg-black/50"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-regular tracking-wide leading-tight text-white font-source-serif mb-6">
+                    MÁTE ZÁJEM?
+                </h2>
+                <p class="text-lg leading-relaxed text-white font-light mb-8">
+                    Konzultace je zpoplatněna částkou 500 Kč, která se při objednání služby odečte z celkové ceny.
+                </p>
+                <PrimaryBtn 
+                    text="REZERVOVAT TERMÍN"
+                    href="/rezervace"
+                    size="lg"
+                />
+            </div>
+        </section>
+</Layout>

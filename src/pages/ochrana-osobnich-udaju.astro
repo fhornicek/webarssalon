@@ -1,1 +1,138 @@
-ochrana-osobnich-udaju
+---
+import Layout from '../layouts/Layout.astro';
+import bgSections from '../assets/bgsections.jpg';
+import { Image } from 'astro:assets';
+---
+
+<Layout title="Ochrana osobních údajů - ARS Salon">
+    <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
+        <!-- Pozadí obrázek -->
+        <div class="absolute inset-0 -z-10">
+            <Image 
+                src={bgSections}
+                alt="Pozadí sekce"
+                class="w-full h-full object-cover"
+                width={1920}
+                height={1080}
+                loading="eager"
+            />
+            <!-- Překryv pro lepší čitelnost textu -->
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-regular tracking-wide leading-tight text-white font-source-serif mb-8">
+                OCHRANA OSOBNÍCH ÚDAJŮ
+            </h1>
+            <p class="text-lg sm:text-xl leading-relaxed text-white font-light">
+                Informace o zpracování a ochraně vašich osobních údajů v souladu s GDPR.
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-white py-16 lg:py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-none text-gray-800">
+                        <h2 class="text-2xl font-medium font-source-serif mb-4 text-gray-900">1. Základní informace</h2>
+                        <p class="mb-6 font-light text-gray-700"> <!-- Přidání text-gray-700 -->
+                            Vaše soukromí je pro nás důležité. Tento dokument vysvětluje, jak shromažďujeme, 
+                            používáme a chráníme vaše osobní údaje v souladu s nařízením GDPR.
+                        </p>
+
+                        <!-- Pokračujte se stejnými změnami pro všechny texty -->
+                        <h2 class="text-2xl font-medium font-source-serif mb-4 text-gray-900">2. Správce osobních údajů</h2>
+                        <div class="bg-gray-50 p-6 rounded-lg mb-6 border">
+                            <p class="font-light text-gray-800">
+                                <strong class="text-gray-900">ARS Salon</strong><br>
+                                Ivana Krausová Čechmánková<br>
+                                Obchodní 15086<br>
+                                686 01 Uherské Hradiště 1<br>
+                                Tel: +420 602 516 612<br>
+                                Email: icechmankova@gmail.com
+                            </p>
+                        </div>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">3. Jaké údaje sbíráme</h2>
+                        <ul class="mb-6 space-y-2 font-light">
+                            <li>• <strong>Identifikační údaje:</strong> jméno, příjmení, telefonní číslo, email</li>
+                            <li>• <strong>Zdravotní údaje:</strong> informace o zdravotním stavu relevantní pro služby</li>
+                            <li>• <strong>Fotografie:</strong> dokumentační snímky před a po zákroku (se souhlasem)</li>
+                            <li>• <strong>Platební údaje:</strong> informace o provedených platbách</li>
+                        </ul>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">4. Účel zpracování</h2>
+                        <ul class="mb-6 space-y-2 font-light">
+                            <li>• Poskytování služeb permanentního make-upu</li>
+                            <li>• Komunikace s klienty a rezervace termínů</li>
+                            <li>• Vedení dokumentace pro zdravotní a bezpečnostní účely</li>
+                            <li>• Plnění právních povinností</li>
+                            <li>• Marketing (pouze se souhlasem)</li>
+                        </ul>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">5. Doba uchování</h2>
+                        <ul class="mb-6 space-y-2 font-light">
+                            <li>• <strong>Klientská dokumentace:</strong> 3 roky od posledního zákroku</li>
+                            <li>• <strong>Zdravotní údaje:</strong> 10 let dle zdravotnické legislativy</li>
+                            <li>• <strong>Marketingové účely:</strong> do odvolání souhlasu</li>
+                            <li>• <strong>Účetní doklady:</strong> dle zákona o účetnictví</li>
+                        </ul>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">6. Vaše práva</h2>
+                        <ul class="mb-6 space-y-2 font-light">
+                            <li>• <strong>Právo na přístup:</strong> informace o zpracování vašich údajů</li>
+                            <li>• <strong>Právo na opravu:</strong> požádat o opravu nesprávných údajů</li>
+                            <li>• <strong>Právo na výmaz:</strong> požádat o smazání údajů</li>
+                            <li>• <strong>Právo na omezení:</strong> omezit zpracování vašich údajů</li>
+                            <li>• <strong>Právo na přenositelnost:</strong> získat údaje ve strukturovaném formátu</li>
+                            <li>• <strong>Právo námitky:</strong> vznést námitku proti zpracování</li>
+                        </ul>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">7. Zabezpečení údajů</h2>
+                        <ul class="mb-6 space-y-2 font-light">
+                            <li>• Používáme technická a organizační opatření</li>
+                            <li>• Přístup k údajům mají pouze oprávněné osoby</li>
+                            <li>• Pravidelně aktualizujeme bezpečnostní opatření</li>
+                            <li>• V případě narušení bezpečnosti vás informujeme</li>
+                        </ul>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">8. Předávání údajů třetím stranám</h2>
+                        <p class="mb-6 font-light">
+                            Vaše osobní údaje nepředáváme třetím stranám, kromě případů, kdy je to 
+                            nezbytné pro poskytování služeb (např. účetní služby) nebo kdy nás 
+                            k tomu zavazuje zákon.
+                        </p>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">9. Cookies a webové stránky</h2>
+                        <p class="mb-6 font-light">
+                            Naše webové stránky používají pouze nezbytné cookies pro správné fungování. 
+                            Nepoužíváme sledovací cookies třetích stran.
+                        </p>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">10. Kontakt</h2>
+                        <p class="mb-6 font-light">
+                            V případě dotazů ohledně zpracování osobních údajů nás kontaktujte:
+                        </p>
+                        <div class="bg-gray-50 p-6 rounded-lg mb-6">
+                            <p class="font-light">
+                                Email: icechmankova@gmail.com<br>
+                                Telefon: +420 602 516 612<br><br>
+                                Máte také právo podat stížnost u Úřadu pro ochranu osobních údajů.
+                            </p>
+                        </div>
+
+                        <h2 class="text-2xl font-medium font-source-serif mb-4">11. Změny těchto zásad</h2>
+                        <p class="mb-6 font-light">
+                            Tyto zásady ochrany osobních údajů můžeme aktualizovat. 
+                            O významných změnách vás budeme informovat prostřednictvím našich webových stránek.
+                        </p>
+
+                        <div class="bg-blue-50 border border-blue-200 p-6 rounded-lg mt-8">
+                            <p class="text-sm font-light text-blue-800">
+                                <strong>Poslední aktualizace:</strong> Listopad 2025<br>
+                                Tyto zásady nabývají účinnosti dnem zveřejnění na webových stránkách.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+</Layout>

@@ -1,1 +1,159 @@
-galerie
+---
+import Layout from '../layouts/Layout.astro';
+import AnimatedSection from '../components/AnimatedSection.astro';
+import { Image } from 'astro:assets';
+import aboutImage from '../assets/about.jpg';
+import permanentMakeupImage from '../assets/permanent-makeup.jpg';
+import bgSections from '../assets/bgsections.jpg';
+---
+
+<Layout title="Galerie - ARS Salon">
+       <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
+            <!-- Pozadí obrázek -->
+            <div class="absolute inset-0 -z-10">
+                <Image 
+                    src={bgSections}
+                    alt="Pozadí sekce"
+                    class="w-full h-full object-cover"
+                    width={1920}
+                    height={1080}
+                    loading="eager"
+                />
+                <!-- Překryv pro lepší čitelnost textu -->
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-regular tracking-wide leading-tight text-white font-source-serif mb-8">
+                    GALERIE
+                </h1>
+                <p class="text-lg sm:text-xl leading-relaxed text-white font-light">
+                    Prohlédněte si ukázky naší práce v oblasti permanentního make-upu. Každý zákrok je proveden s maximální péčí a precizností.
+                </p>
+            </div>
+        </section>
+
+            <section class="bg-beige py-16 lg:py-24">
+                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Placeholder pro galerii obrázků -->
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <Image 
+                                    src={aboutImage} 
+                                    alt="Permanentní make-up obočí - před a po"
+                                    class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    width={400}
+                                    height={300}
+                                    loading="lazy"
+                                />
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-black font-source-serif">Permanentní make-up obočí</h3>
+                            <p class="text-sm text-gray-600 font-light">Microblading technika</p>
+                        </div>
+
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <Image 
+                                    src={permanentMakeupImage} 
+                                    alt="Permanentní make-up rtů - před a po"
+                                    class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    width={400}
+                                    height={300}
+                                    loading="lazy"
+                                />
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-black font-source-serif">Permanentní make-up rtů</h3>
+                            <p class="text-sm text-gray-600 font-light">Kontura + vyplnění</p>
+                        </div>
+
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <Image 
+                                    src={aboutImage} 
+                                    alt="Permanentní linky - před a po"
+                                    class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    width={400}
+                                    height={300}
+                                    loading="lazy"
+                                />
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-black font-source-serif">Permanentní linky</h3>
+                            <p class="text-sm text-gray-600 font-light">Horní linky</p>
+                        </div>
+
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <Image 
+                                    src={permanentMakeupImage} 
+                                    alt="Kombinovaná technika obočí"
+                                    class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    width={400}
+                                    height={300}
+                                    loading="lazy"
+                                />
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-black font-source-serif">Kombinovaná technika</h3>
+                            <p class="text-sm text-gray-600 font-light">Microblading + stínování</p>
+                        </div>
+
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <Image 
+                                    src={aboutImage} 
+                                    alt="Powder brows technika"
+                                    class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    width={400}
+                                    height={300}
+                                    loading="lazy"
+                                />
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-black font-source-serif">Powder Brows</h3>
+                            <p class="text-sm text-gray-600 font-light">Jemné stínování</p>
+                        </div>
+
+                        <div class="group cursor-pointer">
+                            <div class="relative overflow-hidden rounded-lg">
+                                <Image 
+                                    src={permanentMakeupImage} 
+                                    alt="Korekce starého permanentního make-upu"
+                                    class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                                    width={400}
+                                    height={300}
+                                    loading="lazy"
+                                />
+                                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
+                            </div>
+                            <h3 class="mt-4 text-lg font-medium text-black font-source-serif">Korekce PM</h3>
+                            <p class="text-sm text-gray-600 font-light">Úprava starého make-upu</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section class="bg-beige py-16 lg:py-24">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-regular tracking-wide leading-tight text-black font-source-serif mb-6">
+                        PŘED & PO
+                    </h2>
+                    <p class="text-lg leading-relaxed text-black font-light mb-8">
+                        Každá realizace je jedinečná. Výsledky se mohou lišit v závislosti na typu pokožky a individuálních potřebách klientky.
+                    </p>
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                        <p class="text-sm text-yellow-800 font-light">
+                            <strong>Poznámka:</strong> Z důvodu ochrany soukromí našich klientek zveřejňujeme pouze fotografie s jejich souhlasem. 
+                            Více práce můžete vidět při osobní konzultaci v našem salonu.
+                        </p>
+                    </div>
+                </div>
+            </section>
+    </div>
+</Layout>

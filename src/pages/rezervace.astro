@@ -1,1 +1,34 @@
-rezervace
+---
+import Layout from '../layouts/Layout.astro';
+import ReservationSection from '../sections/ReservationSection.astro';
+import AnimatedSection from '../components/AnimatedSection.astro';
+import bgSections from '../assets/bgsections.jpg';
+import { Image } from 'astro:assets';
+---
+
+<Layout title="Rezervace - ARS Salon">
+    <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
+        <!-- Pozadí obrázek -->
+        <div class="absolute inset-0 -z-10">
+            <Image 
+                src={bgSections}
+                alt="Pozadí sekce"
+                class="w-full h-full object-cover"
+                width={1920}
+                height={1080}
+                loading="eager"
+            />
+            <!-- Překryv pro lepší čitelnost textu -->
+            <div class="absolute inset-0 bg-black/40"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-regular tracking-wide leading-tight text-white font-source-serif mb-8">
+                REZERVACE
+            </h1>
+            <p class="text-lg sm:text-xl leading-relaxed text-white font-light">
+                Rezervujte si termín pro konzultaci nebo přímo pro službu permanentního make-upu.
+            </p>
+        </div>
+    </section>
+</Layout>

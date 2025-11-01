@@ -1,27 +1,40 @@
 ---
-const herobackground = `/ars-salon/videos/herobackground-crop.webm`
-const herobackgroundMp4 = `/ars-salon/videos/herobackground-crop.mp4`
-const heroFallbackImage = `/ars-salon/videos/herobackground.jpg`
+const herobackground = `/videos/herobackground720.webm`
+const herobackgroundMp4 = `/videos/herobackground720.mp4`
+import heroFallbackImage from '../assets/hero.jpg'
 import PrimaryBtn from "../components/PrimaryBtn.astro"
+import { Image } from 'astro:assets'
 ---
 
 <section class="relative h-[90vh] overflow-hidden flex items-center justify-center">
-  <!-- Video pozadí -->
+  <!-- Placeholder obrázek během načítání videa -->
   <div class="absolute inset-0 -z-10">
+    <Image 
+      src={heroFallbackImage} 
+      alt="Hero background" 
+      class="hero-placeholder w-full h-full object-cover opacity-100 transition-opacity duration-800 ease-in-out"
+      loading="eager"
+      style="z-index: -15;"
+      width={1920}
+      height={1080}
+    />
+    
+    <!-- Video pozadí -->
     <video 
-      class="w-full h-full object-cover" 
+      class="hero-video w-full h-full object-cover opacity-0" 
       autoplay 
       muted 
       loop 
       playsinline
+      preload="metadata"
+      style="position: absolute; top: 0; left: 0; z-index: -14; transition: opacity 0.8s ease-in-out;"
     >
-      <source src={herobackgroundMp4} type="video/mp4">
       <source src={herobackground} type="video/webm">
-      <!-- Fallback obrázek pro prohlížeče nepodporující video -->
-      <img src={heroFallbackImage} alt="Hero background" class="w-full h-full object-cover">
+      <source src={herobackgroundMp4} type="video/mp4">
     </video>
 
-    <div class="absolute bg-radial-gradient bg-black/40 inset-0 bg-sa z-10"></div>
+    <!-- Gradient overlay -->
+    <div class="absolute bg-radial-gradient bg-black/40 inset-0 z-10"></div>
   </div>
   
   <!-- Hero obsah -->
@@ -30,18 +43,32 @@ import PrimaryBtn from "../components/PrimaryBtn.astro"
       <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light tracking-wide leading-tight">
         KRÁSA V ROVNOVÁZE.
       </h1>
-      <p class="text-lg sm:text-xl lg:text-2xl opacity-95 leading-relaxed mx-auto">
+      <p class="text-base sm:text-xl lg:text-2xl opacity-95 leading-relaxed mx-auto">
         PERMANENTNÍ MAKE-UP OBOČÍ, RTŮ A LINEK S JISTOTOU DLOUHOTELETÝCH ZKUŠENOSTÍ.
       </p>
       <div class="pt-4 flex justify-center">
-        <PrimaryBtn text="REZERVOVAT TERMÍN" size="lg" href="/rezervace"/>
+        <PrimaryBtn text="REZERVOVAT TERMÍN" size="lg" href="/kontakt"/>
       </div>
     </div>
   </div>
 </section>
 
 <style>
-  /* Fallback pozadí pro případ kdy video nelze přehrát */
+  /* Mobile optimalizace - skryjeme video na menších zařízeních */
+  @media (max-width: 768px) {
+    .hero-video {
+      display: none !important;
+    }
+  }
+  
+  /* Respekt pro users s omezeným datovým připojením */
+  @media (prefers-reduced-data: reduce) {
+    .hero-video {
+      display: none !important;
+    }
+  }
+  
+  /* Fallback pozadí */
   section::before {
     content: '';
     position: absolute;
@@ -49,10 +76,67 @@ import PrimaryBtn from "../components/PrimaryBtn.astro"
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/videos/hero-background.jpg');
+    background-image: url('/src/assets/hero.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: -20;
   }
 </style>
+
+<script>
+  // Client-side optimalizace pro Astro
+  document.addEventListener('DOMContentLoaded', () => {
+    const video = document.querySelector('.hero-video') as HTMLVideoElement;
+    const placeholder = document.querySelector('.hero-placeholder') as HTMLImageElement;
+    
+    if (!video || !placeholder) return;
+    
+    // Detekce rychlosti připojení
+    const connection = (navigator as any).connection;
+    const isSlowConnection = connection && (
+      connection.effectiveType === 'slow-2g' || 
+      connection.effectiveType === '2g' ||
+      connection.saveData
+    );
+    
+    // Na pomalém připojení nezačínáme video
+    if (isSlowConnection) {
+      video.style.display = 'none';
+      return;
+    }
+    
+    // Event listenery pro smooth přechod
+    video.addEventListener('canplaythrough', () => {
+      // Video je připravené - fade in video, fade out placeholder
+      video.classList.remove('opacity-0');
+      video.classList.add('opacity-100');
+      
+      // Počkej chvíli a pak skryj placeholder
+      setTimeout(() => {
+        placeholder.classList.remove('opacity-100');
+        placeholder.classList.add('opacity-0');
+      }, 500);
+    });
+    
+    // Error handling
+    video.addEventListener('error', () => {
+      video.style.display = 'none';
+      // Nech placeholder viditelný
+      placeholder.classList.remove('opacity-0', 'opacity-50');
+      placeholder.classList.add('opacity-100');
+    });
+    
+    // Intersection Observer pro lazy loading
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.1) {
+          video.load();
+          observer.unobserve(video);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    observer.observe(video);
+  });
+</script>

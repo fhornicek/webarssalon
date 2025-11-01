@@ -1,0 +1,132 @@
+---
+import SecondaryBtn from './SecondaryBtn.astro';
+
+export interface Props {
+  title?: string;
+  action?: string;
+  method?: string;
+  includeService?: boolean;
+  class?: string;
+}
+
+const { 
+  title = "NAPIŠTE MI ZPRÁVU",
+  action = "/api/contact",
+  method = "POST",
+  includeService = false,
+  class: additionalClass = ""
+} = Astro.props;
+---
+
+<div class={`bg-white p-8 rounded-lg shadow-lg ${additionalClass}`}>
+  <h3 class="text-2xl sm:text-3xl font-medium text-black font-source-serif mb-6">
+    {title}
+  </h3>
+  
+  <form class="space-y-6" method={method} action={action}>
+    <!-- Name -->
+    <div>
+      <label for="name" class="block text-sm font-medium text-black uppercase tracking-wide font-source-serif mb-2">
+        JMÉNO A PŘÍJMENÍ *
+      </label>
+      <input 
+        type="text" 
+        id="name" 
+        name="name" 
+        required 
+        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondarybtn focus:border-transparent transition-colors duration-300 text-base"
+        placeholder="Vaše jméno"
+      >
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email" class="block text-sm font-medium text-black uppercase tracking-wide font-source-serif mb-2">
+        E-MAIL *
+      </label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required 
+        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondarybtn focus:border-transparent transition-colors duration-300 text-base"
+        placeholder="vas@email.cz"
+      >
+    </div>
+
+    <!-- Phone -->
+    <div>
+      <label for="phone" class="block text-sm font-medium text-black uppercase tracking-wide font-source-serif mb-2">
+        TELEFON
+      </label>
+      <input 
+        type="tel" 
+        id="phone" 
+        name="phone" 
+        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondarybtn focus:border-transparent transition-colors duration-300 text-base"
+        placeholder="+420 xxx xxx xxx"
+      >
+    </div>
+
+    <!-- Service (optional) -->
+    {includeService && (
+      <div>
+        <label for="service" class="block text-sm font-medium text-black uppercase tracking-wide font-source-serif mb-2">
+          SLUŽBA
+        </label>
+        <select 
+          id="service" 
+          name="service"
+          class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondarybtn focus:border-transparent transition-colors duration-300 text-base"
+        >
+          <option value="">Vyberte službu</option>
+          <option value="microblading">Microblading</option>
+          <option value="powder-brows">Powder brows</option>
+          <option value="kombinovana-technika">Kombinovaná technika</option>
+          <option value="kontura-rtu">Kontura rtů</option>
+          <option value="vyplneni-rtu">Vyplnění rtů</option>
+          <option value="kontura-vyplneni">Kontura + vyplnění rtů</option>
+          <option value="horni-linky">Horní linky</option>
+          <option value="dolni-linky">Dolní linky</option>
+          <option value="horni-dolni-linky">Horní + dolní linky</option>
+          <option value="konzultace">Konzultace</option>
+          <option value="odstraneni-pm">Odstranění PM</option>
+          <option value="balicek">Balíček všech služeb</option>
+          <option value="jine">Jiné</option>
+        </select>
+      </div>
+    )}
+
+    <!-- Message -->
+    <div>
+      <label for="message" class="block text-sm font-medium text-black uppercase tracking-wide font-source-serif mb-2">
+        ZPRÁVA *
+      </label>
+      <textarea 
+        id="message" 
+        name="message" 
+        rows="5" 
+        required
+        class="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-secondarybtn focus:border-transparent transition-colors duration-300 text-base resize-vertical"
+        placeholder="Popište své požadavky, preferovaný termín nebo položte otázku..."
+      ></textarea>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="pt-4">
+      <SecondaryBtn 
+        text="ODESLAT ZPRÁVU" 
+        type="submit" 
+        size="lg" 
+        class="w-full"
+      />
+    </div>
+
+    <!-- Privacy Notice -->
+    <p class="text-xs text-gray-600 leading-relaxed">
+      Odesláním formuláře souhlasíte se zpracováním osobních údajů v souladu s 
+      <a href="/ochrana-osobnich-udaju" class="text-secondarybtn hover:underline">ochranou osobních údajů</a>.
+      Povinná pole jsou označena *.
+    </p>
+  </form>
+</div>

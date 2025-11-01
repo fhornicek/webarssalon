@@ -1,1 +1,77 @@
-o mne
+---
+import Layout from '../layouts/Layout.astro';
+import IndexSection from '../sections/IndexSection.astro';
+import Ivana from '../assets/ivana.jpg';
+import { Image } from 'astro:assets';
+import bgSections from '../assets/bgsections.jpg';
+---
+
+<Layout title="O mně - ARS Salon">
+        <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
+            <!-- Pozadí obrázek -->
+            <div class="absolute inset-0 -z-10">
+                <Image 
+                    src={bgSections}
+                    alt="Pozadí sekce"
+                    class="w-full h-full object-cover"
+                    width={1920}
+                    height={1080}
+                    loading="eager"
+                />
+                <!-- Překryv pro lepší čitelnost textu -->
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-regular tracking-wide leading-tight text-white font-source-serif mb-8">
+                    O MNĚ
+                </h1>
+                <p class="text-lg sm:text-xl leading-relaxed text-white font-light">
+                    Více než 30 let zkušeností v oblasti permanentního make-upu. Každá klientka je pro mě jedinečná.
+                </p>
+            </div>
+        </section>
+
+        <IndexSection
+            title="IVANA KRAUSOVÁ ČECHMÁNKOVÁ"
+            description="Jmenuji se Ivana Krausová Čechmánková a už více než 30 let se věnuji permanentnímu make-upu. Začala jsem svou kariéru jako kosmetička a postupně jsem se specializovala na permanentní make-up. Absolvovala jsem mnoho kurzů a certifikací u renomovaných lektorů v České republice i zahraničí. Moje práce je o preciznosti, přirozenosti a harmonii rysů. Každá klientka je pro mě jedinečná a přistupuji k ní individuálně. Používám pouze kvalitní pigmenty a nejmodernější techniky, které zaručují bezpečnost a dlouhotrvající výsledky. Mým cílem je, aby každá žena odcházela ze salonu sebevědomější, ale stále sama sebou."
+            imageSrc={Ivana}
+            imageAlt="Ivana Krausová při práci"
+            backgroundColor="bg-beige"
+            titleSize="xl"
+            textColor="text-black"
+            imageLoading="eager"
+            imageFetchPriority="high"
+        />
+
+        <section class="bg-white py-16 lg:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-regular tracking-wide leading-tight text-black font-source-serif mb-8">
+                    MOJE CERTIFIKACE
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-medium text-black font-source-serif">VZDĚLÁNÍ A KURZY</h3>
+                        <ul class="space-y-2 text-base text-black font-light">
+                            <li>• Certifikovaná kosmetička</li>
+                            <li>• Specializace permanentní make-up</li>
+                            <li>• Pokročilé techniky microblading</li>
+                            <li>• Kurz hygieny a bezpečnosti</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h3 class="text-xl font-medium text-black font-source-serif">SPECIALIZACE</h3>
+                        <ul class="space-y-2 text-base text-black font-light">
+                            <li>• Permanentní make-up obočí</li>
+                            <li>• Permanentní make-up rtů</li>
+                            <li>• Permanentní linky</li>
+                            <li>• Korekce a úpravy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>

@@ -1,1 +1,164 @@
-kontakt
+---
+import Layout from '../layouts/Layout.astro';
+import bgSections from '../assets/bgsections.jpg';
+import { Image } from 'astro:assets';
+import ContactForm from '../components/ContactForm.astro';
+---
+
+<Layout title="Kontakt - ARS Salon">
+       <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
+            <!-- Pozadí obrázek -->
+            <div class="absolute inset-0 -z-10">
+                <Image 
+                    src={bgSections}
+                    alt="Pozadí sekce"
+                    class="w-full h-full object-cover"
+                    width={1920}
+                    height={1080}
+                    loading="eager"
+                />
+                <!-- Překryv pro lepší čitelnost textu -->
+                <div class="absolute inset-0 bg-black/40"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-regular tracking-wide leading-tight text-white font-source-serif mb-8">
+                    KONTAKT
+                </h1>
+                <p class="text-lg sm:text-xl leading-relaxed text-white font-light">
+                    Máte otázky nebo si přejete rezervovat termín? Kontaktujte mě prostřednictvím telefonu,<br>e-mailu nebo navštivte salon.
+                </p>
+            </div>
+        </section>
+
+        <section class="bg-beige py-16 lg:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-8">
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-regular tracking-wide leading-tight text-black font-source-serif">
+                            KONTAKTNÍ ÚDAJE
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            
+                            <!-- Address -->
+                            <div class="space-y-2">
+                                <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif">
+                                    ADRESA
+                                </h3>
+                                <p class="text-base text-black font-light">
+                                    Obchodní 15086<br>
+                                    686 01 Uherské Hradiště 1
+                                </p>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="space-y-2">
+                                <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif">
+                                    TELEFON
+                                </h3>
+                                <a href="tel:+420602516612" class="text-base text-black font-light hover:text-secondarybtn transition-colors duration-300">
+                                    +420 602 516 612
+                                </a>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="space-y-2">
+                                <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif">
+                                    E-MAIL
+                                </h3>
+                                <a href="mailto:icechmankova@gmail.com" class="text-base text-black font-light hover:text-secondarybtn transition-colors duration-300">
+                                    icechmankova@gmail.com
+                                </a>
+                            </div>
+
+                            <!-- Opening Hours -->
+                            <div class="space-y-2">
+                                <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif">
+                                    OTEVÍRACÍ DOBA
+                                </h3>
+                                <div class="space-y-1">
+                                    <p class="text-base text-black font-light">Pondělí - Pátek: 9:00 - 18:00</p>
+                                    <p class="text-base text-black font-light">Sobota: 9:00 - 14:00</p>
+                                    <p class="text-base text-black font-light">Neděle: Zavřeno</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <ContactForm />
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="py-16 lg:py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Heading -->
+                <div class="text-center mb-12 lg:mb-16">
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-regular tracking-wide leading-tight text-black font-source-serif">
+                        NAJDETE NÁS ZDE
+                    </h2>
+                </div>
+
+                <!-- Map -->
+                <div class="mb-12 lg:mb-16">
+                    <div class="h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2613.8942346101303!2d17.46024077717013!3d49.06964507136167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47131438fc5a511b%3A0x475170d104ceeeed!2sARS%20salon!5e0!3m2!1scs!2scz!4v1761404258914!5m2!1scs!2scz"
+                            title="Mapa s umístěním ARS Salon, Obchodní 15086, Uherské Hradiště"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                        >
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Directions Info -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif mb-4">
+                            LOKACE
+                        </h3>
+                        <p class="text-base text-black font-light leading-relaxed">
+                            Centrum Uherského Hradiště na ulici Obchodní, v blízkosti hlavních nákupních center.
+                        </p>
+                    </div>
+
+                    <div class="text-center md:text-left">
+                        <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif mb-4">
+                            AUTEM
+                        </h3>
+                        <p class="text-base text-black font-light leading-relaxed">
+                            Parkování je možné přímo před salonem nebo na parkovišti naproti. Obě možnosti jsou placené.
+                        </p>
+                    </div>
+
+                    <div class="text-center md:text-left">
+                        <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif mb-4">
+                            MHD
+                        </h3>
+                        <p class="text-base text-black font-light leading-relaxed">
+                            Salon se nachází cca dvě minuty chůze od autobusového nádraží.
+                        </p>
+                    </div>
+
+                    <div class="text-center md:text-left">
+                        <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif mb-4">
+                            PĚŠKY Z CENTRA
+                        </h3>
+                        <p class="text-base text-black font-light leading-relaxed">
+                            Salon je vzdálen pouhých 5 minut chůze od Masarykova náměstí.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+</Layout>

@@ -4,7 +4,7 @@ import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-sm">
+<nav class="absolute top-0 left-0 right-0 z-50">
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-20">
       
@@ -56,16 +56,19 @@ import logo from '../assets/logo.png';
       <div class="md:hidden">
         <button 
           type="button" 
-          class="text-white hover:text-beige focus:outline-none focus:text-beige transition-colors duration-300"
+          class="text-white hover:text-beige focus:outline-none focus:text-beige transition-colors duration-300 p-2"
           aria-controls="mobile-menu" 
           aria-expanded="false"
           onclick="toggleMobileMenu()"
+          id="mobile-menu-button"
         >
           <span class="sr-only">Otevřít hlavní menu</span>
-          <!-- Hamburger icon -->
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+          <!-- Hamburger icon with animation -->
+          <div class="w-8 h-8 flex flex-col justify-center items-center">
+            <span class="hamburger-line w-7 h-0.5 bg-current transition-all duration-300 ease-in-out"></span>
+            <span class="hamburger-line w-7 h-0.5 bg-current transition-all duration-300 ease-in-out mt-1.5"></span>
+            <span class="hamburger-line w-7 h-0.5 bg-current transition-all duration-300 ease-in-out mt-1.5"></span>
+          </div>
         </button>
       </div>
     </div>
@@ -73,7 +76,7 @@ import logo from '../assets/logo.png';
 
   <!-- Mobile menu -->
   <div class="md:hidden hidden" id="mobile-menu">
-    <div class="px-2 pt-2 pb-3 space-y-1 bg-black/80 backdrop-blur-sm">
+    <div class="px-2 pt-2 pb-3 space-y-1 bg-black/90 backdrop-blur-sm">
       <a href="/o-mne" class="text-white hover:text-beige block px-3 py-2 text-base font-medium tracking-wide uppercase transition-colors duration-300">
         O MNĚ
       </a>
@@ -101,13 +104,47 @@ import logo from '../assets/logo.png';
   </div>
 </nav>
 
+<style>
+  .menu-open .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+  
+  .menu-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-open .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  
+  .menu-open-animation {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+</style>
+
 <script>
   function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
-    menu?.classList.toggle('hidden');
+    const button = document.getElementById('mobile-menu-button');
+    
+    if (menu && button) {
+      const isHidden = menu.classList.contains('hidden');
+      
+      if (isHidden) {
+        // Otevírání - nejdříve zobrazit, pak animovat
+        menu.classList.remove('hidden');
+        button.classList.add('menu-open');
+        button.setAttribute('aria-expanded', 'true');
+      } else {
+        // Zavírání
+        menu.classList.add('hidden');
+        button.classList.remove('menu-open');
+        button.setAttribute('aria-expanded', 'false');
+      }
+    }
   }
   
-
   document.addEventListener('DOMContentLoaded', () => {
     const button = document.querySelector('[aria-controls="mobile-menu"]');
     button?.addEventListener('click', toggleMobileMenu);

@@ -25,6 +25,10 @@
   .text-beige {
     color: #E3E3DE;
   }
+  .border-beige {
+    border-color: #E3E3DE;
+  }
+  
   .bg-secondarybtn {
     background-color: #5C6672;
   }
