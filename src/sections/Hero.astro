@@ -50,20 +50,6 @@ import { Image } from 'astro:assets'
 </section>
 
 <style>
-  /* Mobile optimalizace - skryjeme video na menších zařízeních */
-  @media (max-width: 768px) {
-    .hero-video {
-      display: none !important;
-    }
-  }
-  
-  /* Respekt pro users s omezeným datovým připojením */
-  @media (prefers-reduced-data: reduce) {
-    .hero-video {
-      display: none !important;
-    }
-  }
-  
   /* Fallback pozadí */
   section::before {
     content: '';
@@ -86,18 +72,6 @@ import { Image } from 'astro:assets'
     const placeholder = document.querySelector('.hero-placeholder') as HTMLImageElement;
     
     if (!video || !placeholder) return;
-    
-    const connection = (navigator as any).connection;
-    const isSlowConnection = connection && (
-      connection.effectiveType === 'slow-2g' || 
-      connection.effectiveType === '2g' ||
-      connection.saveData
-    );
-    
-    if (isSlowConnection) {
-      video.style.display = 'none';
-      return;
-    }
     
     video.addEventListener('canplaythrough', () => {
       video.classList.remove('opacity-0');
