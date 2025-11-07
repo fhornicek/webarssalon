@@ -2,10 +2,11 @@
 import PrimaryBtn from '../components/PrimaryBtn.astro';
 import SecondaryBtn from '../components/SecondaryBtn.astro';
 import { Image } from 'astro:assets';
-import salonInterior from '../assets/salon-interior.jpg'; // Přidejte obrázek salonu
+import salonInterior from '../assets/salon-interior.jpg'; 
 ---
 
 <section class="mx-4 sm:mx-12 relative h-[90vh] sm:h-[60vh] flex items-center justify-center overflow-hidden bg-radial-gradient">
+  
   <div class="absolute inset-0 -z-10">
     <Image 
       src={salonInterior}
@@ -15,17 +16,22 @@ import salonInterior from '../assets/salon-interior.jpg'; // Přidejte obrázek 
       height={1080}
       quality={90}
     />
+    
     <div class="absolute inset-0 bg-black/40"></div>
   </div>
 
+  
   <div class="relative z-10 text-center text-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="space-y-8">
+      
       
       <h2 class="text-5xl sm:text-6xl lg:text-7xl font-light tracking-wide leading-tight">
         S ČÍM VÁM POMOHU
       </h2>
 
+      
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mt-12">
+        
         
         <div class="text-center space-y-3">
           <h3 class="text-lg sm:text-xl font-light tracking-wide uppercase">
@@ -37,6 +43,7 @@ import salonInterior from '../assets/salon-interior.jpg'; // Přidejte obrázek 
           </p>
         </div>
 
+        
         <div class="text-center space-y-3">
           <h3 class="text-lg sm:text-xl tracking-wide uppercase font-light">
             PERMANENTNÍ RTY
@@ -47,6 +54,7 @@ import salonInterior from '../assets/salon-interior.jpg'; // Přidejte obrázek 
           </p>
         </div>
 
+        
         <div class="text-center space-y-3">
           <h3 class="text-lg sm:text-xl font-light tracking-wide uppercase">
             PERMANENTNÍ LINKY
@@ -59,6 +67,7 @@ import salonInterior from '../assets/salon-interior.jpg'; // Přidejte obrázek 
 
       </div>
 
+      
       <div class="flex flex-col sm:flex-col gap-4 justify-center items-center pt-6">
         <PrimaryBtn 
           text="CENÍK"

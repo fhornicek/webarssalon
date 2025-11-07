@@ -7,7 +7,9 @@ import bgSections from '../assets/bgsections.jpg';
 ---
 
 <Layout title="Stránka nenalezena - ARS Salon">
+    
     <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
+        
         <div class="absolute inset-0 -z-10">
             <Image 
                 src={bgSections}
@@ -17,23 +19,28 @@ import bgSections from '../assets/bgsections.jpg';
                 height={1080}
                 loading="eager"
             />
+            
             <div class="absolute inset-0 bg-black/60"></div>
         </div>
         
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div class="space-y-8">
+                
                 <h1 class="text-8xl sm:text-9xl lg:text-[12rem] font-light tracking-wide leading-none text-white font-source-serif">
                     404
                 </h1>
+                
                 
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-regular tracking-wide leading-tight text-white font-source-serif">
                     STRÁNKA NENALEZENA
                 </h2>
                 
+                
                 <p class="text-lg sm:text-xl leading-relaxed text-white font-light max-w-2xl mx-auto">
                     Omlouváme se, ale stránka, kterou hledáte, neexistuje nebo byla přesunuta. 
                     Vraťte se na hlavní stránku nebo použijte navigaci.
                 </p>
+                
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
                     <PrimaryBtn 

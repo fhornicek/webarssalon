@@ -7,6 +7,7 @@ import ContactForm from '../components/ContactForm.astro';
 
 <Layout title="Kontakt - ARS Salon">
        <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
+            
             <div class="absolute inset-0 -z-10">
                 <Image 
                     src={bgSections}
@@ -16,6 +17,7 @@ import ContactForm from '../components/ContactForm.astro';
                     height={1080}
                     loading="eager"
                 />
+                
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>
             
@@ -33,12 +35,47 @@ import ContactForm from '../components/ContactForm.astro';
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
                     
+                    
                     <div class="space-y-8">
                         <h2 class="text-4xl sm:text-5xl lg:text-6xl font-regular tracking-wide leading-tight text-black font-source-serif">
                             KONTAKTNÍ ÚDAJE
                         </h2>
                         
                         <div class="space-y-6">
+                            
+                            
+                            <div class="space-y-6">
+                                <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif">
+                                    KONTAKT
+                                </h3>
+                                
+                                
+                                <div class="space-y-2 border-l-2 border-secondarybtn pl-4">
+                                    <p class="text-base text-black font-light">
+                                        Ivana Krausová Čechmánková
+                                    </p>
+                                    <a href="tel:+420602516612" class="block text-base text-black font-light hover:text-secondarybtn transition-colors duration-300">
+                                        +420 602 516 612
+                                    </a>
+                                    <a href="mailto:icechmankova@gmail.com" class="block text-base text-black font-light hover:text-secondarybtn transition-colors duration-300">
+                                        icechmankova@gmail.com
+                                    </a>
+                                </div>
+
+                                
+                                <div class="space-y-2 border-l-2 border-secondarybtn pl-4">
+                                    <p class="text-base text-black font-light">
+                                        Marie Vidláková
+                                    </p>
+                                    <a href="tel:+420XXX XXX XXX" class="block text-base text-black font-light hover:text-secondarybtn transition-colors duration-300">
+                                        +420 123 456 789
+                                    </a>
+                                    <a href="mailto:marie.vidlakova@email.com" class="block text-base text-black font-light hover:text-secondarybtn transition-colors duration-300">
+                                        marie.vidlakova@email.com
+                                    </a>
+                                </div>
+                            </div>
+
                             
                             <div class="space-y-2">
                                 <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif">
@@ -50,24 +87,7 @@ import ContactForm from '../components/ContactForm.astro';
                                 </p>
                             </div>
 
-                            <div class="space-y-2">
-                                <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif">
-                                    TELEFON
-                                </h3>
-                                <a href="tel:+420602516612" class="text-base text-black font-light hover:text-secondarybtn transition-colors duration-300">
-                                    +420 602 516 612
-                                </a>
-                            </div>
-
-                            <div class="space-y-2">
-                                <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif">
-                                    E-MAIL
-                                </h3>
-                                <a href="mailto:icechmankova@gmail.com" class="text-base text-black font-light hover:text-secondarybtn transition-colors duration-300">
-                                    icechmankova@gmail.com
-                                </a>
-                            </div>
-
+                            
                             <div class="space-y-2">
                                 <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif">
                                     OTEVÍRACÍ DOBA
@@ -81,23 +101,27 @@ import ContactForm from '../components/ContactForm.astro';
                         </div>
                     </div>
 
+                    
                     <ContactForm />
                 </div>
             </div>
         </section>
 
+        
         <section class="py-16 lg:py-24 bg-white">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                
                 <div class="text-center mb-12 lg:mb-16">
                     <h2 class="text-4xl sm:text-5xl lg:text-6xl font-regular tracking-wide leading-tight text-black font-source-serif">
                         NAJDETE NÁS ZDE
                     </h2>
                 </div>
 
+                
                 <div class="mb-12 lg:mb-16">
                     <div class="h-[400px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2613.8942346101303!2d17.46024077717013!3d49.06964507136167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47131438fc5a511b%3A0x475170d104ceeeed!2sARS%20salon!5e0!3m2!1scs!2scz!4v1761404258914!5m2!1scs!2scz"
+                            src="https:
                             title="Mapa s umístěním ARS Salon, Obchodní 15086, Uherské Hradiště"
                             width="100%" 
                             height="100%" 
@@ -110,6 +134,7 @@ import ContactForm from '../components/ContactForm.astro';
                     </div>
                 </div>
 
+                
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="text-center md:text-left">
                         <h3 class="text-lg font-medium text-black uppercase tracking-wide font-source-serif mb-4">

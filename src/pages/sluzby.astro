@@ -3,6 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import ServicesSection from '../sections/ServicesSection.astro';
 import IndexSection from '../sections/IndexSection.astro';
 import permanentMakeupImage from '../assets/permanent-makeup.jpg';
+import salonInteriorImage from '../assets/salon-interior.jpg';
+import ivanaImage from '../assets/ivana.jpg';
+import aboutImage from '../assets/about.jpg';
 import { Image } from 'astro:assets';
 import bgSections from '../assets/bgsections.jpg';
 import PrimaryBtn from '../components/PrimaryBtn.astro';
@@ -11,6 +14,7 @@ import SecondaryBtn from '../components/SecondaryBtn.astro';
 
 <Layout title="Služby - ARS Salon">
         <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
+            
             <div class="absolute inset-0 -z-10">
                 <Image 
                     src={bgSections}
@@ -20,6 +24,7 @@ import SecondaryBtn from '../components/SecondaryBtn.astro';
                     height={1080}
                     loading="eager"
                 />
+                
                 <div class="absolute inset-0 bg-black/40"></div>
             </div>
             
@@ -34,115 +39,168 @@ import SecondaryBtn from '../components/SecondaryBtn.astro';
         </section>
 
 
+        
         <section class="bg-beige py-16 lg:py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     
-                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-medium text-black text-center font-source-serif mb-4">
-                                PERMANENTNÍ MAKE-UP OBOČÍ
-                            </h3>
-                            <p class="text-base text-black font-light leading-relaxed mb-4">
-                                Nemáte obočí? Máte málo chloupků nebo se vám nelíbí tvar? Speciální vláskovou technikou vytvořím přirozený vzhled obočí.
-                            </p>
+                    
+                    <div class="bg-white shadow-lg flex flex-col overflow-hidden">
+                        
+                        <div class="h-48 overflow-hidden">
+                            <Image 
+                                src={permanentMakeupImage}
+                                alt="Permanentní make-up obočí"
+                                class="w-full h-full object-cover"
+                                width={400}
+                                height={200}
+                                loading="lazy"
+                            />
                         </div>
                         
-                        <div class="space-y-3 mb-6 grow">
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">Vláskova metoda - napodobuje růst chloupků</span>
+                        <div class="p-8 flex flex-col grow">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-medium text-black text-center font-source-serif mb-4">
+                                    PERMANENTNÍ MAKE-UP OBOČÍ
+                                </h3>
+                                <p class="text-base text-black font-light leading-relaxed mb-4">
+                                    Nemáte obočí? Máte málo chloupků nebo se vám nelíbí tvar? Speciální vláskovou technikou vytvořím přirozený vzhled obočí.
+                                </p>
                             </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">Stínování - jemná a přirozená kresba</span>
+                            
+                            <div class="space-y-3 mb-6 grow">
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">Vláskova metoda - napodobuje růst chloupků</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">Stínování - jemná a přirozená kresba</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">3D metoda - plastický vzhled obočí</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">Míchání odstínů hnědé (nikdy černé)</span>
+                                </div>
                             </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">3D metoda - plastický vzhled obočí</span>
+                            
+                            <div class="text-center mt-auto">
+                                <span class="text-2xl font-medium text-secondarybtn">od 4 000 Kč</span>
                             </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">Míchání odstínů hnědé (nikdy černé)</span>
-                            </div>
-                        </div>
-                        
-                        <div class="text-center mt-auto">
-                            <span class="text-2xl font-medium text-secondarybtn">od 4 000 Kč</span>
                         </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-medium text-black text-center font-source-serif mb-4">
-                                PERMANENTNÍ LINKY
-                            </h3>
-                            <p class="text-base text-black font-light leading-relaxed mb-4">
-                                Zvýrazním to nejkrásnější na ženě - její oči. Od jemné kontury mezi řasami až po výrazné linky.
-                            </p>
+                    
+                    <div class="bg-white shadow-lg flex flex-col overflow-hidden">
+                        
+                        <div class="h-48 overflow-hidden">
+                            <Image 
+                                src={aboutImage}
+                                alt="Permanentní linky"
+                                class="w-full h-full object-cover"
+                                width={400}
+                                height={200}
+                                loading="lazy"
+                            />
                         </div>
                         
-                        <div class="space-y-3 mb-6 grow">
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">Jemná kontura mezi řasami</span>
+                        <div class="p-8 flex flex-col grow">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-medium text-black text-center font-source-serif mb-4">
+                                    PERMANENTNÍ LINKY
+                                </h3>
+                                <p class="text-base text-black font-light leading-relaxed mb-4">
+                                    Zvýrazním to nejkrásnější na ženě - její oči. Od jemné kontury mezi řasami až po výrazné linky.
+                                </p>
                             </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">Dojem hustších řas</span>
+                            
+                            <div class="space-y-3 mb-6 grow">
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">Jemná kontura mezi řasami</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">Dojem hustších řas</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">Bílá linka na sliznici - módní hit</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">Ideální pro zapadlé oči</span>
+                                </div>
                             </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">Bílá linka na sliznici - módní hit</span>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">Ideální pro zapadlé oči</span>
+                            
+                            <div class="text-center mt-auto">
+                                <span class="text-2xl font-medium text-secondarybtn">od 2 500 Kč</span>
                             </div>
                         </div>
-                        
-                        <div class="text-center mt-auto">
-                            <span class="text-2xl font-medium text-secondarybtn">od 2 500 Kč</span>
-                        </div>
-                        
                     </div>
 
-                    <div class="bg-white p-8 rounded-lg shadow-lg flex flex-col">
-                        <div class="mb-6">
-                            <h3 class="text-2xl font-medium text-black text-center font-source-serif mb-4">
-                                PERMANENTNÍ MAKE-UP RTŮ
-                            </h3>
-                            <p class="text-base text-black font-light leading-relaxed mb-4">
-                                Rty budou krásnější, plnější a budou působit sexy dojmem. Od přirozeného odstínu až po efekt trvalého nalíčení.
-                            </p>
+                    
+                    <div class="bg-white shadow-lg flex flex-col overflow-hidden">
+                        
+                        <div class="h-48 overflow-hidden">
+                            <Image 
+                                src={salonInteriorImage}
+                                alt="Permanentní make-up rtů"
+                                class="w-full h-full object-cover"
+                                width={400}
+                                height={200}
+                                loading="lazy"
+                            />
                         </div>
                         
-                        <div class="space-y-3 mb-6">
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">Kontura rtů</span>
+                        <div class="p-8 flex flex-col grow">
+                            <div class="mb-6">
+                                <h3 class="text-2xl font-medium text-black text-center font-source-serif mb-4">
+                                    PERMANENTNÍ MAKE-UP RTŮ
+                                </h3>
+                                <p class="text-base text-black font-light leading-relaxed mb-4">
+                                    Rty budou krásnější, plnější a budou působit sexy dojmem. Od přirozeného odstínu až po efekt trvalého nalíčení.
+                                </p>
                             </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">Barevná výplň</span>
+                            
+                            <div class="space-y-3 mb-6">
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">Kontura rtů</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">Barevná výplň</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">3D metoda - celoplošné stínování</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
+                                    <span class="text-sm text-black font-light">Vyrovnání nerovných rtů po oparech</span>
+                                </div>
                             </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">3D metoda - celoplošné stínování</span>
+                            
+                            <div class="text-xs text-gray-600 space-y-1 mb-4">
+                                <p>✓ Minimalizuje vznik vrásek</p>
+                                <p>✓ Dodává rtům plnější vzhled</p>
+                                <p>✓ Zabrání rozpíjení rtěnky</p>
                             </div>
-                            <div class="flex items-center">
-                                <span class="w-2 h-2 bg-secondarybtn rounded-full mr-3"></span>
-                                <span class="text-sm text-black font-light">Vyrovnání nerovných rtů po oparech</span>
+                            
+                            <div class="text-center mt-auto">
+                                <span class="text-2xl font-medium text-secondarybtn">od 3 500 Kč</span>
                             </div>
-                        </div>
-                        <div class="text-center mt-auto">
-                            <span class="text-2xl font-medium text-secondarybtn">od 3 500 Kč</span>
                         </div>
                     </div>
                 </div>
                 
+                
                 <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col">
+                    <div class="bg-white p-6 shadow-lg flex flex-col">
                         <h3 class="text-xl font-medium text-black font-source-serif mb-4 text-center">
                             KOREKCE A ÚPRAVY
                         </h3>
@@ -154,7 +212,7 @@ import SecondaryBtn from '../components/SecondaryBtn.astro';
                         </div>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col">
+                    <div class="bg-white p-6  shadow-lg flex flex-col">
                         <h3 class="text-xl font-medium text-black font-source-serif mb-4 text-center">
                             ODSTRANĚNÍ PERMANENTNÍHO MAKE-UPU
                         </h3>
@@ -169,59 +227,26 @@ import SecondaryBtn from '../components/SecondaryBtn.astro';
             </div>
         </section>
 
+        
         <section class="bg-white py-16 lg:py-24">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                    
-                    <div class="space-y-8">
-                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-regular tracking-wide leading-tight text-black font-source-serif">
-                            MŮJ PŘÍSTUP K PRÁCI
-                        </h2>
-                        
-                        <div class="space-y-6">
-                            <div>
-                                <h3 class="text-xl font-medium text-black font-source-serif mb-3">
-                                    KONZULTACE A NÁVRH
-                                </h3>
-                                <p class="text-base text-black font-light leading-relaxed">
-                                    Každý zákrok začíná důkladnou konzultací, kde společně navrhneme tvar a barvu podle vaší tváře a přání.
-                                </p>
-                            </div>
-                            
-                            <div>
-                                <h3 class="text-xl font-medium text-black font-source-serif mb-3">
-                                    KVALITNÍ MATERIÁLY
-                                </h3>
-                                <p class="text-base text-black font-light leading-relaxed">
-                                    Používám pouze certifikované pigmenty a sterilní nástroje. Bezpečnost a hygiena jsou pro mě prioritou.
-                                </p>
-                            </div>
-                            
-                            <div>
-                                <h3 class="text-xl font-medium text-black font-source-serif mb-3">
-                                    INDIVIDUÁLNÍ PŘÍSTUP
-                                </h3>
-                                <p class="text-base text-black font-light leading-relaxed">
-                                    Každý klient je jedinečný. Přizpůsobuji techniku a styl vašemu typu kůže a osobním preferencím.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-regular tracking-wide leading-tight text-black font-source-serif mb-6">
+                        DALŠÍ SLUŽBY
+                    </h2>
+                    <p class="text-lg leading-relaxed text-black font-light max-w-3xl mx-auto">
+                        Nabízíme i další specializované služby pro vaši krásu a péči.
+                    </p>
+                </div>
 
-                    <div>
-                        <Image 
-                            src={permanentMakeupImage}
-                            alt="Permanentní make-up"
-                            class="w-full rounded-lg shadow-lg"
-                            width={600}
-                            height={400}
-                            loading="lazy"
-                        />
-                    </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
                 </div>
             </div>
         </section>
 
+        
         <section class="bg-beige py-16 lg:py-24">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
@@ -272,9 +297,11 @@ import SecondaryBtn from '../components/SecondaryBtn.astro';
             </div>
         </section>
 
+        
         <section class="relative py-16 lg:py-24 overflow-hidden">
+            
             <div class="absolute inset-0 -z-10">
-                <Image 
+                <Image
                     src={bgSections}
                     alt="Pozadí sekce"
                     class="w-full h-full object-cover"
@@ -282,6 +309,7 @@ import SecondaryBtn from '../components/SecondaryBtn.astro';
                     height={1080}
                     loading="lazy"
                 />
+                
                 <div class="absolute inset-0 bg-black/50"></div>
             </div>
             

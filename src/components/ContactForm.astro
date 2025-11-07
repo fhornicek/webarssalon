@@ -18,12 +18,13 @@ const {
 } = Astro.props;
 ---
 
-<div class={`bg-white p-8 rounded-lg shadow-lg ${additionalClass}`}>
+<div class={`bg-white p-8 shadow-lg ${additionalClass}`}>
   <h3 class="text-2xl sm:text-3xl font-medium text-black font-source-serif mb-6">
     {title}
   </h3>
   
   <form class="space-y-6" method={method} action={action}>
+    
     <div>
       <label for="name" class="block text-sm font-medium text-black uppercase tracking-wide font-source-serif mb-2">
         JMÉNO A PŘÍJMENÍ *
@@ -38,6 +39,7 @@ const {
       >
     </div>
 
+    
     <div>
       <label for="email" class="block text-sm font-medium text-black uppercase tracking-wide font-source-serif mb-2">
         E-MAIL *
@@ -52,6 +54,7 @@ const {
       >
     </div>
 
+    
     <div>
       <label for="phone" class="block text-sm font-medium text-black uppercase tracking-wide font-source-serif mb-2">
         TELEFON
@@ -65,6 +68,7 @@ const {
       >
     </div>
 
+    
     {includeService && (
       <div>
         <label for="service" class="block text-sm font-medium text-black uppercase tracking-wide font-source-serif mb-2">
@@ -93,6 +97,7 @@ const {
       </div>
     )}
 
+    
     <div>
       <label for="message" class="block text-sm font-medium text-black uppercase tracking-wide font-source-serif mb-2">
         ZPRÁVA *
@@ -107,6 +112,7 @@ const {
       ></textarea>
     </div>
 
+    
     <div class="pt-4">
       <SecondaryBtn 
         text="ODESLAT ZPRÁVU" 
@@ -116,6 +122,7 @@ const {
       />
     </div>
 
+    
     <p class="text-xs text-gray-600 leading-relaxed">
       Odesláním formuláře souhlasíte se zpracováním osobních údajů v souladu s 
       <a href="/webarssalon/ochrana-osobnich-udaju" class="text-secondarybtn hover:underline">ochranou osobních údajů</a>.

@@ -1,12 +1,12 @@
 ---
-const herobackground = `/webarssalon/videos/herobackground720.webm`
-const herobackgroundMp4 = `/webarssalon/videos/herobackground720.mp4`
-import heroFallbackImage from '../assets/hero.jpg'
+const herobackground = `webarssalon/videos/herobackground720.webm`
+const herobackgroundMp4 = `webarssalon/videos/herobackground720.mp4`
+import heroFallbackImage from '../assets/hero2.jpg'
 import PrimaryBtn from "../components/PrimaryBtn.astro"
 import { Image } from 'astro:assets'
 ---
 
-<section class="relative h-[90vh] overflow-hidden flex items-center justify-center">
+<section class="relative h-[93vh] overflow-hidden flex items-center justify-center">
   <div class="absolute inset-0 -z-10">
     <Image 
       src={heroFallbackImage} 
@@ -39,7 +39,7 @@ import { Image } from 'astro:assets'
       <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-light tracking-wide leading-tight">
         KRÁSA V ROVNOVÁZE.
       </h1>
-      <p class="text-base sm:text-xl lg:text-2xl opacity-95 leading-relaxed mx-auto">
+      <p class="text-base font-light sm:text-xl lg:text-2xl opacity-95 leading-relaxed mx-auto">
         PERMANENTNÍ MAKE-UP OBOČÍ, RTŮ A LINEK S JISTOTOU DLOUHOTELETÝCH ZKUŠENOSTÍ.
       </p>
       <div class="pt-4 flex justify-center">
@@ -50,7 +50,18 @@ import { Image } from 'astro:assets'
 </section>
 
 <style>
-  /* Fallback pozadí */
+  @media (max-width: 768px) {
+    .hero-video {
+      display: none !important;
+    }
+  }
+  
+  @media (prefers-reduced-data: reduce) {
+    .hero-video {
+      display: none !important;
+    }
+  }
+  
   section::before {
     content: '';
     position: absolute;
@@ -72,6 +83,18 @@ import { Image } from 'astro:assets'
     const placeholder = document.querySelector('.hero-placeholder') as HTMLImageElement;
     
     if (!video || !placeholder) return;
+    
+    const connection = (navigator as any).connection;
+    const isSlowConnection = connection && (
+      connection.effectiveType === 'slow-2g' || 
+      connection.effectiveType === '2g' ||
+      connection.saveData
+    );
+    
+    if (isSlowConnection) {
+      video.style.display = 'none';
+      return;
+    }
     
     video.addEventListener('canplaythrough', () => {
       video.classList.remove('opacity-0');

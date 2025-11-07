@@ -6,6 +6,7 @@ import { Image } from 'astro:assets';
 
 <Layout title="Obchodní podmínky - ARS Salon">
     <section class="relative py-24 lg:py-36 overflow-hidden bg-radial-gradient">
+        
         <div class="absolute inset-0 -z-10">
             <Image 
                 src={bgSections}
@@ -15,6 +16,7 @@ import { Image } from 'astro:assets';
                 height={1080}
                 loading="eager"
             />
+            
             <div class="absolute inset-0 bg-black/40"></div>
         </div>
         
@@ -31,9 +33,6 @@ import { Image } from 'astro:assets';
     <section class="bg-white py-16 lg:py-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="prose prose-lg max-w-none text-black">
-                <p class="mb-6 font-light">
-                    Zde budou nějaké základní obchodní podmínky, zatím vygenerované AI.
-                </p>
                         <h2 class="text-2xl font-medium font-source-serif mb-4">1. Základní ustanovení</h2>
                         <p class="mb-6 font-light">
                             Tyto obchodní podmínky upravují práva a povinnosti mezi provozovatelem ARS Salon 
@@ -106,4 +105,5 @@ import { Image } from 'astro:assets';
                     </div>
                 </div>
             </section>
+    </div>
 </Layout>
